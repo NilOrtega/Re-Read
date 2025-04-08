@@ -1,11 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Re-Read</title>
+  <link rel="stylesheet" href="css.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+  <header>
+    <div class="navbar">
+      <div class="logo">Re-Read</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Re-Read</h1>
+      <p>En Re-Read podrás encontrar libros de segunda mano en perfecto estado. También vender los tuyos. Porque siempre hay libros leídos y libros por leer. Por eso Re-compramos y Re-vendemos para que nunca te quedes sin ninguno de los dos.</p>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab active" onclick="showTab('re-read')">Re-Read</button>
+      <button class="tab" onclick="showTab('libros')">Libros</button>
+      <button class="tab" onclick="showTab('ebooks')">eBooks</button>
+    </nav>
+
+    <section id="re-read" class="tab-content active">
+      <h2>Nunca la lectura ha sido tan necesaria</h2>
+      <p>En esto tiempos difíciles Re-Read se suma al mensaje de #yomequedoencasa por el bien comun de la sociedad</p>
+      <h3>Reduce & Reuse & Read</h3>
+      <p>Somos la librería Eco-Friendly — Re-Read nació pensando en verde con el objetivo de compartir una pasion, la lectura y para expresar una preocupacion: si queremos construir un futuro sostenible, es necesario que reduzcamos el consumo y que reutilicemos cuantos mas obejetos materiales mejor</p>
+    </section>
+
+    <section id="libros" class="tab-content hidden">
+      <h2>Todos los libros tienen el mismo precio</h2>
+      <p>Libros casi nuevos a un precio casi imposible.</p>
+      <div class="pricing">
+        <div><img src="imagenes/1-libro-3€.gif" alt="3euros"><p>3euros</p></div>
+        <div><img src="imagenes/2-libros-5€.gif" alt="5euros"><p>5euros</p></div>
+        <div><img src="imagenes/5-libros-10€.gif" alt="10euros"><p>10euros</p></div>
+      </div>
+      <h3>¿Te cambias de piso?...</h3>
+      <p>En Re-Read compramos tus libros para darles una segunda vida. Los compramos todos al mismo precio: 0,20 euros. Siempre hay libros leidos y libros por leer. Por eso Re-compramos y Re-vendemos para que nunca te quedes sin ninguno de los dos</p>
+    </section>
+
+    <section id="ebooks" class="tab-content hidden">
+      <h2>Toda la actualidad en eBook</h2>
+      <div class="ebooks">
+        <div><img src="imagenes/cell.jpeg" alt="Cell"><p>A traves de los telefonos moviles se envia un mensaje que convierte a todos en esclavos asesinos...</p></div>
+        <div><img src="imagenes/elciclodelhombrelobo.jpeg" alt="El ciclo del hombre lobo"><p>Una escalofriante revision del mito del hombre lobo por el rey de la literatura de terror...</p></div>
+        <div><img src="imagenes/elresplandor.jpeg" alt="El resplandor"><p>Esa es la palabra que Danny habia visto en el espejo. Y, aunque no sabia leer, entendio que era un mensaje de horror...</p></div>
+        <div><img src="imagenes/doctorsleep.jpeg" alt="Doctor Sueño"><p>Una novela que entusiasmara a los millones de lectores de El resplandor y que encantara </p></div>
+        <div><img src="imagenes/mientrasescribo.jpeg" alt="Mientras escribo"><p>Pocas veces un libro sobre el oficio de escribir ha resultado tan clarificador, util y revelador</p></div>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Top ventas</h3>
+      <ul>
+        <li>Cien años de soledad.</li>
+        <li>Crónica de una muerte anunciada.</li>
+        <li>El otoño del patriarca.</li>
+        <li>El general en su laberinto.</li>
+      </ul>
+    </aside>
+  </main>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(section => {
+        section.classList.remove('active');
+        section.classList.add('hidden');
+      });
+
+      document.getElementById(tabId).classList.add('active');
+      document.getElementById(tabId).classList.remove('hidden');
+      event.target.classList.add('active');
+    }
+
+    // Si estás en móvil, mostramos todas las secciones
+    function ajustarTabs() {
+      if (window.innerWidth < 768) {
+        document.querySelectorAll('.tab-content').forEach(section => {
+          section.classList.add('active');
+          section.classList.remove('hidden');
+        });
+      }
+    }
+
+    window.addEventListener('load', ajustarTabs);
+    window.addEventListener('resize', ajustarTabs);
+  </script>
 </body>
 </html>

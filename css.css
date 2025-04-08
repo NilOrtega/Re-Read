@@ -1,0 +1,226 @@
+body {
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    background: white;
+    color: #000;
+  }
+  
+  .navbar {
+    background-color: #0d4d41;
+    padding: 1rem;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 2rem;
+    max-width: 600px; /* Limita el ancho del contenido */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+}
+  
+  
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #b23c00;
+    padding-left: 1rem;
+  }
+  
+  .tab {
+    background: none;
+    border: none;
+    padding: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  
+  .tab.active {
+    background-color: #b23c00;
+    color: white;
+  }
+  
+  .tab-content {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  h1, h2, h3 {
+    font-weight: bold;
+  }
+  
+  .pricing {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+  }
+  
+  .price-card {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 100px;
+  }
+  
+  .price-card.blue {
+    background-color: #5bc0eb;
+    color: white;
+  }
+  
+  .price-card.red {
+    background-color: #fa4d56;
+    color: white;
+  }
+  
+  .price-card.green {
+    background-color: #40c9a2;
+    color: white;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 350px;
+    right: 20px;
+    background-color: white;
+    border-left: 3px solid #0d4d41;
+    padding: 1rem;
+    width: 200px;
+    font-size: 0.9rem;
+  }
+  
+  .sidebar h3 {
+    font-weight: bold;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    background-color: #0d4d41;
+    color: white;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+  }
+  
+  .ebooks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    margin-top: 2rem;
+  }
+  
+  .ebooks div {
+    text-align: center;
+    max-width: 150px;
+  }
+  
+  .ebooks img {
+    max-width: 200%;
+    border-radius: 4px;
+  }
+  
+  .ebooks p {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.2;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      position: static;
+      width: 100%;
+      border-left: none;
+      margin-top: 2rem;
+    }
+  
+    .tabs {
+      justify-content: center;
+      padding-left: 0;
+    }
+  
+    .ebooks {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  
+    .ebooks div {
+      max-width: 50%;
+    }
+  
+    .ebooks img {
+      max-width: 50%;
+    }
+  
+    .tab-content {
+      display: none;
+    }
+  
+    .tab-content.active {
+      display: block;
+    }
+  }
+
+  .tab-content {
+    display: none;
+  }
+  
+  /* Mostrar solo la activa */
+  .tab-content.active {
+    display: block;
+  }
+  
+  /* Las pestañas visibles también en móvil */
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #b23c00;
+    padding-left: 1rem;
+    overflow-x: auto;
+  }
+  
+  /* Botones pestañas */
+  .tab {
+    background: none;
+    border: none;
+    padding: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .tab.active {
+    background-color: #b23c00;
+    color: white;
+  }
+  
+  /* Responsive ajustes */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: static;
+      width: 100%;
+      border-left: none;
+      margin-top: 2rem;
+    }
+  
+    .ebooks {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  
+    .ebooks div {
+      max-width: 100%;
+    }
+  
+    .ebooks img {
+      max-width: 100%;
+    }
+  }
